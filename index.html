@@ -3,37 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        header{
-            background-color: white;
-            color: aquamarine;
-            text-align: center;
-            max-width: 800px;
-            margin: auto;
-            padding: 16px;
-        }
-        main{
-            background-color:blueviolet;
-            color: aquamarine;
-            max-width: 800px;
-            margin: auto;
-        }
-        img{
-            width: 80px;
-            height: 80px;
-        }
-    </style>
+    <title>Valorant Blog</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
-        <h1>Agro e Sustentabilidade</h1>
-        <p>O agronegócio e a sustentabilidade caminham juntos para garantir a segurança alimentar global e a preservação ambiental.</p>
+        <h1>Radiant News</h1>
+        <p>O seu portal de estratégias, atualizações e tudo sobre o cenário de Valorant.</p>
     </header>
+
     <main>
-        <h2>Produzindo o Futuro: Inovação e respeito ao meio ambiente no campo.
-            Sustentabilidade no campo: O equilíbrio entre produzir e preservar.</h2>
-        <p>O agronegócio e a sustentabilidade caminham juntos na busca por garantir a segurança alimentar global sem esgotar os recursos naturais. O setor baseia-se em três pilares fundamentais: ambiental, social e econômico, exigindo equilíbrio para produzir mais com menor impacto ecológico</p>
+        <h2>Dominando os Low Elo: Como melhorar seu posicionamento de mira</h2>
+        
+        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80" alt="Setup de Computador Gamer" class="post-img">
+        
+        <p>Subir de elo no Valorant vai muito além de ter uma mira perfeita. O posicionamento estratégico e o controle de mapa são fundamentais para surpreender os adversários. Entender quando segurar um pixel pixelado ou quando recuar para jogar com o time separa os jogadores casuais dos verdadeiros Radiantes.</p>
+        
+        <p>Neste artigo, vamos analisar os melhores pontos de defesa nos mapas atuais e como a escolha do seu Agente influencia diretamente na sua postura de jogo. Prepare sua Spike e confira as dicas!</p>
+
+        <div class="interaction-area">
+            <button class="like-btn" id="likeButton">❤️ Curtir</button>
+            <span class="like-count" id="likeCount">0 curtidas</span>
+        </div>
     </main>    
+
+    <script>
+        const likeButton = document.getElementById('likeButton');
+        const likeCount = document.getElementById('likeCount');
+        let count = 0;
+        let isLiked = false;
+
+        likeButton.addEventListener('click', () => {
+            if (!isLiked) {
+                count++;
+                likeButton.classList.add('liked');
+                likeButton.innerText = '❤️ Curtido!';
+                isLiked = true;
+            } else {
+                count--;
+                likeButton.classList.remove('liked');
+                likeButton.innerText = '❤️ Curtir';
+                isLiked = false;
+            }
+            likeCount.innerText = `${count} ${count === 1 ? 'curtida' : 'curtidas'}`;
+        });
+    </script>
+
 </body>
 </html>
